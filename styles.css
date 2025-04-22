@@ -2,6 +2,7 @@
     --pastel-pink: #E28CA0;
     --pastel-blue: #7FC3CC;
     --charcoal: #2C2C2C;
+    --off-white: #FAF9F6;
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -11,23 +12,32 @@
     box-sizing: border-box;
 }
 
+html, body {
+    min-height: 100vh;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     color: var(--charcoal);
+    background-color: var(--off-white);
+}
+
+/* Home page specific styles */
+body.index {
     background: linear-gradient(135deg, var(--pastel-pink) 0%, var(--pastel-blue) 100%);
-    min-height: 100vh;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    background-color: var(--off-white);
 }
 
 /* Navigation */
 .navbar {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: var(--off-white);
     padding: 1rem 2rem;
     position: fixed;
     width: 100%;
@@ -79,7 +89,7 @@ body {
 
 /* Hero Section */
 .hero {
-    background: rgba(255, 255, 255, 0.9);
+    background-color: var(--off-white);
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -87,19 +97,6 @@ body {
     text-align: center;
     padding: 6rem 2rem;
     margin-top: 60px;
-    position: relative;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(45deg, var(--pastel-pink) 0%, var(--pastel-blue) 100%);
-    opacity: 0.1;
-    z-index: -1;
 }
 
 .hero-content h1 {
@@ -134,31 +131,18 @@ body {
 
 .btn.primary {
     background-color: var(--pastel-pink);
-    color: white;
+    color: var(--off-white);
 }
 
 .btn.secondary {
     background-color: var(--pastel-blue);
-    color: white;
+    color: var(--off-white);
 }
 
 /* Intro Section */
 .intro {
     padding: 4rem 0;
-    background-color: rgba(255, 255, 255, 0.9);
-    position: relative;
-}
-
-.intro::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(45deg, var(--pastel-blue) 0%, var(--pastel-pink) 100%);
-    opacity: 0.1;
-    z-index: -1;
+    background-color: var(--off-white);
 }
 
 .intro h2 {
@@ -177,7 +161,7 @@ body {
 .feature {
     text-align: center;
     padding: 2rem;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: var(--off-white);
     border-radius: 15px;
     transition: transform 0.3s ease;
     box-shadow: var(--shadow);
@@ -204,22 +188,9 @@ body {
 
 /* Footer */
 footer {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: var(--off-white);
     padding: 3rem 0;
     color: var(--charcoal);
-    position: relative;
-}
-
-footer::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(45deg, var(--pastel-pink) 0%, var(--pastel-blue) 100%);
-    opacity: 0.1;
-    z-index: -1;
 }
 
 .footer-content {
