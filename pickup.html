@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Pickup - Sweet Lab</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .pickup-section {
+            padding: 6rem 0 4rem;
+            background-color: var(--white);
+        }
+
+        .pickup-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .pickup-form {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+
+        .pickup-form h1 {
+            color: var(--pastel-pink);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .menu-items {
+            margin-top: 2rem;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+
+        .item-info h3 {
+            color: var(--pastel-pink);
+            margin-bottom: 0.5rem;
+        }
+
+        .item-info p {
+            color: var(--text-color);
+            font-size: 0.9rem;
+        }
+
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .quantity-btn {
+            background-color: var(--pastel-blue);
+            color: var(--white);
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .quantity-input {
+            width: 50px;
+            text-align: center;
+        }
+
+        .submit-btn {
+            background-color: var(--pastel-pink);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: transform 0.3s ease;
+            width: 100%;
+            margin-top: 2rem;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .confirmation-message {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--pastel-blue);
+            border-radius: 15px;
+            margin-top: 2rem;
+        }
+
+        .confirmation-message h2 {
+            color: var(--pastel-pink);
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <h1>Sweet Lab</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="pickup.html" class="active">Schedule Pickup</a></li>
+        </ul>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+
+    <main class="pickup-section">
+        <div class="pickup-container">
+            <div class="pickup-form">
+                <h1>Schedule Your Pickup</h1>
+                <form id="pickupForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Pickup Date</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Pickup Time</label>
+                        <input type="time" id="time" name="time" required>
+                    </div>
+
+                    <div class="menu-items">
+                        <h2>Select Items</h2>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h3>Classic Bubble Waffle</h3>
+                                <p>$5.99</p>
+                            </div>
+                            <div class="quantity-control">
+                                <button type="button" class="quantity-btn minus">-</button>
+                                <input type="number" class="quantity-input" value="0" min="0">
+                                <button type="button" class="quantity-btn plus">+</button>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h3>Nutella Dream</h3>
+                                <p>$7.99</p>
+                            </div>
+                            <div class="quantity-control">
+                                <button type="button" class="quantity-btn minus">-</button>
+                                <input type="number" class="quantity-input" value="0" min="0">
+                                <button type="button" class="quantity-btn plus">+</button>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h3>Ice Cream Delight</h3>
+                                <p>$8.99</p>
+                            </div>
+                            <div class="quantity-control">
+                                <button type="button" class="quantity-btn minus">-</button>
+                                <input type="number" class="quantity-input" value="0" min="0">
+                                <button type="button" class="quantity-btn plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="notes">Special Instructions</label>
+                        <textarea id="notes" name="notes" rows="3"></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Confirm Order</button>
+                </form>
+
+                <div class="confirmation-message" id="confirmationMessage">
+                    <h2>Order Confirmed!</h2>
+                    <p>Thank you for your order. We'll see you soon!</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Sweet Lab</h3>
+                    <p>123 Dessert Lane, Treatsville</p>
+                    <p>+123-456-7890</p>
+                    <p>contact@sweetlab.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Hours</h3>
+                    <p>Monday - Friday: 10am - 8pm</p>
+                    <p>Saturday - Sunday: 9am - 9pm</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 Sweet Lab. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Quantity control functionality
+        document.querySelectorAll('.quantity-control').forEach(control => {
+            const minusBtn = control.querySelector('.minus');
+            const plusBtn = control.querySelector('.plus');
+            const input = control.querySelector('.quantity-input');
+
+            minusBtn.addEventListener('click', () => {
+                if (input.value > 0) {
+                    input.value = parseInt(input.value) - 1;
+                }
+            });
+
+            plusBtn.addEventListener('click', () => {
+                input.value = parseInt(input.value) + 1;
+            });
+        });
+
+        // Form submission
+        document.getElementById('pickupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const form = this;
+            const confirmationMessage = document.getElementById('confirmationMessage');
+            
+            form.style.display = 'none';
+            confirmationMessage.style.display = 'block';
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Sweet Lab</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .menu-section {
+            padding: 4rem 0;
+        }
+
+        .menu-category {
+            margin-bottom: 3rem;
+        }
+
+        .menu-category h2 {
+            color: var(--pastel-pink);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .menu-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .menu-item {
+            background-color: var(--white);
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .menu-item h3 {
+            color: var(--pastel-pink);
+            margin-bottom: 0.5rem;
+        }
+
+        .menu-item .price {
+            color: var(--pastel-blue);
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        .menu-item .description {
+            color: var(--text-color);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <h1>Sweet Lab</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html" class="active">Menu</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="pickup.html">Schedule Pickup</a></li>
+        </ul>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+
+    <main class="menu-section">
+        <div class="container">
+            <h1>Our Menu</h1>
+            
+            <!-- Bubble Waffles -->
+            <div class="menu-category">
+                <h2>Bubble Waffles</h2>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <h3>Classic Bubble Waffle</h3>
+                        <p class="description">Our signature crispy bubble waffle with powdered sugar</p>
+                        <p class="price">$5.99</p>
+                    </div>
+                    <div class="menu-item">
+                        <h3>Nutella Dream</h3>
+                        <p class="description">Bubble waffle filled with Nutella and fresh strawberries</p>
+                        <p class="price">$7.99</p>
+                    </div>
+                    <div class="menu-item">
+                        <h3>Ice Cream Delight</h3>
+                        <p class="description">Bubble waffle cone with two scoops of premium ice cream</p>
+                        <p class="price">$8.99</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sweet & Savory Crepes -->
+            <div class="menu-category">
+                <h2>Sweet & Savory Crepes</h2>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <h3>Strawberry Bliss</h3>
+                        <p class="description">Fresh strawberries, whipped cream, and chocolate drizzle</p>
+                        <p class="price">$6.99</p>
+                    </div>
+                    <div class="menu-item">
+                        <h3>Banana Nutella</h3>
+                        <p class="description">Sliced bananas, Nutella, and crushed hazelnuts</p>
+                        <p class="price">$7.49</p>
+                    </div>
+                    <div class="menu-item">
+                        <h3>Ham & Cheese</h3>
+                        <p class="description">Classic savory crepe with ham and melted cheese</p>
+                        <p class="price">$6.99</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Milkshakes -->
+            <div class="menu-category">
+                <h2>Milkshakes</h2>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <h3>Chocolate Dream</h3>
+                        <p class="description">Rich chocolate milkshake with whipped cream</p>
+                        <p class="price">$5.99</p>
+                    </div>
+                    <div class="menu-item">
+                        <h3>Strawberry Fields</h3>
+                        <p class="description">Fresh strawberry milkshake with real fruit</p>
+                        <p class="price">$5.99</p>
+                    </div>
+                    <div class="menu-item">
+                        <h3>Cookies & Cream</h3>
+                        <p class="description">Vanilla milkshake with crushed Oreo cookies</p>
+                        <p class="price">$6.49</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ice Cream Rolls -->
+            <div class="menu-category">
+                <h2>Ice Cream Rolls</h2>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <h3>Classic Vanilla</h3>
+                        <p class="description">Hand-rolled vanilla ice cream with your choice of toppings</p>
+                        <p class="price">$7.99</p>
+                    </div>
+                    <div class="menu-item">
+                        <h3>Chocolate Lover</h3>
+                        <p class="description">Chocolate ice cream rolls with chocolate sauce and sprinkles</p>
+                        <p class="price">$8.49</p>
+                    </div>
+                    <div class="menu-item">
+                        <h3>Mixed Berry</h3>
+                        <p class="description">Berry-flavored ice cream rolls with fresh fruit</p>
+                        <p class="price">$8.99</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coffee & Drinks -->
+            <div class="menu-category">
+                <h2>Coffee & Drinks</h2>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <h3>Espresso</h3>
+                        <p class="description">Single or double shot of premium espresso</p>
+                        <p class="price">$2.99 / $3.99</p>
+                    </div>
+                    <div class="menu-item">
+                        <h3>Latte</h3>
+                        <p class="description">Espresso with steamed milk and foam</p>
+                        <p class="price">$4.49</p>
+                    </div>
+                    <div class="menu-item">
+                        <h3>Iced Tea</h3>
+                        <p class="description">Freshly brewed iced tea with lemon</p>
+                        <p class="price">$3.49</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Sweet Lab</h3>
+                    <p>123 Dessert Lane, Treatsville</p>
+                    <p>+123-456-7890</p>
+                    <p>contact@sweetlab.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Hours</h3>
+                    <p>Monday - Friday: 10am - 8pm</p>
+                    <p>Saturday - Sunday: 9am - 9pm</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 Sweet Lab. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
